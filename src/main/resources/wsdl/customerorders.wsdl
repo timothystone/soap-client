@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://wsdl.anothercaffeinatedday.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns2="http://schemas.xmlsoap.org/soap/http" xmlns:ns1="http://www.anothercaffeinatedday.com" name="CustomerOrdersWSImplService" targetNamespace="http://wsdl.anothercaffeinatedday.com/">
+  <wsdl:import location="http://localhost:8080/wsdlfirst/customerordersservice?wsdl=CustomerOrdersPortType.wsdl" namespace="http://www.anothercaffeinatedday.com">
+    </wsdl:import>
+  <wsdl:binding name="CustomerOrdersWSImplServiceSoapBinding" type="ns1:CustomerOrdersPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="createOrders">
+      <soap:operation soapAction="http://www.anothercaffeinatedday.com/CreateOrdersOperation" style="document"/>
+      <wsdl:input name="createOrders">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createOrdersResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOrders">
+      <soap:operation soapAction="http://www.anothercaffeinatedday.com/GetOrdersOperation" style="document"/>
+      <wsdl:input name="getOrders">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getOrdersResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CustomerOrdersWSImplService">
+    <wsdl:port binding="tns:CustomerOrdersWSImplServiceSoapBinding" name="CustomerOrdersWSImplPort">
+      <soap:address location="http://localhost:8080/wsdlfirst/customerordersservice"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

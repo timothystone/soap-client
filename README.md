@@ -87,6 +87,29 @@ we will be retrieving it directly from the running service in Lesson 96.
 
 ## Lesson 96 — Retrieve the WSDL
 
+Bharath immediately takes into retrieving the WSDL from the WSDL First project in Section 9. To do so, start the service
+from your IDE or on the command line.
+
+Bharath masterfully runs most of these projects from Eclipse. To do so in IntelliJ or another IDE or editor, locate and
+execute the `spring-boot:run` goal provided by the Spring Boot Maven **Plugin**. The plugin is provided by default in the
+generation of the project using the Spring Initializr.
+
+IntelliJ's Maven tooling provides access to all the Plugin goals. From the command line, the same can be performed as 
+follows:
+
+```shell
+% mvn spring-boot:run
+```
+The WSDL is provided at the service's URL, e.g., `http://localhost:8080/wsdlfirst/customerordersservice?wsdl`. The 
+specific URL may be different per your own `application.properties` configuration from Section 9.
+
+Save the WSDL to `src/main/resources/wsdl/customerorders.wsdl`.
+
+**Lesson Notes**
+
+As noted in Lesson 95, this step was performed, but repeated here a little differently.
+
+
 ## Lesson 97 — Generate the Stubs
 
 ## Lesson 98 — Implement the Client
