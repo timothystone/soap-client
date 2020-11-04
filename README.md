@@ -109,8 +109,26 @@ Save the WSDL to `src/main/resources/wsdl/customerorders.wsdl`.
 
 As noted in Lesson 95, this step was performed, but repeated here a little differently.
 
-
 ## Lesson 97 — Generate the Stubs
+
+This lesson starts by retrieving the CXF Codegen Plugin configuration from the WSDL First Service created in Section 9.
+
+See the commit history for configuration. The customizations I made are detailed below.
+
+1. Use the property `${cxf.version}` for the `version` element.
+1. A `defaultOptions` element is added for the `bindingFiles`. In an earlier section the `bindings.xjb` file is 
+explained in details. Of note, the `simple` and `serialization` options are highly recommended. Add this file from the 
+CustomerOrders web service in `src/main/resources` per the `bindingFile` element.
+1. Strike the `sourceRoot` element from the `configuration`. The defined value for this element is the default and 
+unnecessary.
+1. The `extraargs` element is a nice to have as it provides a `toString()` method to the generated stubs. Additionally,
+the defined argument, `-xjc-Xts:style:multiline`, dumps the stringified object to the log on multiple lines, providing
+an easier to read output. IMHO. To support this, the `xjcplugins` and `xjc-utils` are added to the dependencies. Also a 
+`cxf.xjc.version` property is added for ease of updates.
+
+**Lesson Notes**
+
+Run `mvn clean package` to test the stub generation!
 
 ## Lesson 98 — Implement the Client
 
