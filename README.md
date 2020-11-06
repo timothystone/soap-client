@@ -134,6 +134,35 @@ The WSDL was originally named all lowercase. This was refactored using PascalCas
 
 ## Lesson 98 — Implement the Client
 
+Bharath begins with creating an entry point for the webservice client. This is completed in n steps as follows:
+
+1. Use the Service implementation class to get an instance and pass it the WSDL URL.
+2. Get the PortType from the service instance
+3. Use the portType to pass an order request
+4. Process the response of the request.
+
+**Lesson Notes**
+
+The Main class is called `Main`, following a pattern from larger projects I have worked on, and not a longer form as 
+described in the course. 
+
+Running the application's Main class is IDE specific, but often straight forward. YMMV.
+
+In the refactoring of the WSDL name in Lesson 98, user error in the dialog skipped renaming the `<wsdl>`
+element of the `cxf-codegen-plugin` `execution` `configuration`. This resulted in the aforementioned xjc-plugins and runtime failing to generate the 
+`toString()` methods! While StackOverflow returned a number of possible fixes, I ignored all of them because I knew the 
+configuration had worked previously in the WSDL First section. **I turned to the logging output** to find that goal for 
+`wsdl2java` was looking for the all lowercase WSDL file. Correcting this addressed the problem and generated the expected
+`toString()` methods.
+
+**Lesson Polish**
+
+Use a `LOGGER` for output.
+
+Use a local constant for the WSDL location, `WSDL_LOCATION`.
+
+Use the builtin formatter for Logging output vs. `System.out`.
+
 ## Lesson 99 — Assignment
 
 ## Lesson 100 — Flow, and the Service Provide Mechanism

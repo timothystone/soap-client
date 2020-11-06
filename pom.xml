@@ -80,7 +80,7 @@
                             </defaultOptions>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <wsdl>${basedir}/src/main/resources/wsdl/customerorders.wsdl</wsdl>
+                                    <wsdl>${basedir}/src/main/resources/wsdl/CustomerOrders.wsdl</wsdl>
                                     <extraargs>
                                         <extraarg>-xjc-Xts:style:multiline</extraarg>
                                     </extraargs>
