@@ -1,9 +1,12 @@
 package com.anothercaffeinatedday.soap.client;
 
+import com.anothercaffeinatedday.CreateOrdersRequest;
+import com.anothercaffeinatedday.CreateOrdersResponse;
 import com.anothercaffeinatedday.CustomerOrdersPortType;
 import com.anothercaffeinatedday.GetOrdersRequest;
 import com.anothercaffeinatedday.GetOrdersResponse;
 import com.anothercaffeinatedday.Order;
+import com.anothercaffeinatedday.Product;
 import com.anothercaffeinatedday.wsdl.CustomerOrdersWSImplService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,6 +23,32 @@ public class Main {
         CustomerOrdersWSImplService service = new CustomerOrdersWSImplService(new URL(WSDL_LOCATION));
         CustomerOrdersPortType customerOrdersWSImplPort = service.getCustomerOrdersWSImplPort();
 
+        getOrders(customerOrdersWSImplPort);
+        createOrder(customerOrdersWSImplPort);
+
+    }
+
+    private static void createOrder(CustomerOrdersPortType customerOrdersWSImplPort) {
+        CreateOrdersRequest request = new CreateOrdersRequest();
+        Product product = new Product();
+        product.setId("123-B");
+        product.setDescription("Red Box D&D");
+        product.setQuantity(1);
+        Order order = new Order();
+        order.setId(3);
+        order.getProducts().add(product);
+        request.setCustomerId(2);
+        request.setOrder(order);
+        CreateOrdersResponse response = customerOrdersWSImplPort.createOrders(request);
+
+        if (response.isResponse()) {
+            LOGGER.debug("Successfully created order {} for customer {}", order.getId(), request.getCustomerId());
+        } else {
+            LOGGER.error("Response was {}.", response.isResponse());
+        }
+    }
+
+    private static void getOrders(CustomerOrdersPortType customerOrdersWSImplPort) {
         GetOrdersRequest request = new GetOrdersRequest();
         request.setCustomerId(1);
         GetOrdersResponse response = customerOrdersWSImplPort.getOrders(request);
@@ -27,6 +56,5 @@ public class Main {
 
         LOGGER.debug("Number of orders for Customer {}: {}", orders.get(0).getId(), orders.size());
         LOGGER.debug(orders.get(0).toString());
-
     }
 }

@@ -165,6 +165,14 @@ Use the builtin formatter for Logging output vs. `System.out`.
 
 ## Lesson 99 — Assignment
 
+In this lesson, Bharath wants us implement a create orders request, create an order, and dump the new order to the log.
+
+Following Lesson 99's four (4) step pattern, the implementation is part of the commit history for your review.
+
+**Lesson Polish**
+
+Implemented private static methods for clarity of the Get and Create Orders exercises.
+
 ## Lesson 100 — Flow, and the Service Provide Mechanism
 
 ## Lesson 101 — Section Summary
