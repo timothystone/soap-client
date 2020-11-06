@@ -113,12 +113,12 @@ As noted in Lesson 95, this step was performed, but repeated here a little diffe
 
 This lesson starts by retrieving the CXF Codegen Plugin configuration from the WSDL First Service created in Section 9.
 
-See the commit history for configuration. The customizations I made are detailed below.
+See the commit history for the POM plugin configuration. The customizations I made are detailed below.
 
 1. Use the property `${cxf.version}` for the `version` element.
-1. A `defaultOptions` element is added for the `bindingFiles`. In an earlier section the `bindings.xjb` file is 
-explained in details. Of note, the `simple` and `serialization` options are highly recommended. Add this file from the 
-CustomerOrders web service in `src/main/resources` per the `bindingFile` element.
+1. Provide a `defaultOptions` element for the `bindingFiles`. In an earlier section, the `bindings.xjb` file is 
+explained in detail. Of note, the `simple` and `serialization` options are highly recommended for most projects. 
+Add this file from the CustomerOrders web service in `src/main/resources` per the `bindingFile` element.
 1. Strike the `sourceRoot` element from the `configuration`. The defined value for this element is the default and 
 unnecessary.
 1. The `extraargs` element is a nice to have as it provides a `toString()` method to the generated stubs. Additionally,
@@ -129,6 +129,8 @@ an easier to read output. IMHO. To support this, the `xjcplugins` and `xjc-utils
 **Lesson Notes**
 
 Run `mvn clean package` to test the stub generation!
+
+The WSDL was originally named all lowercase. This was refactored using PascalCase, i.e., CustomerOrders.wsdl.
 
 ## Lesson 98 — Implement the Client
 

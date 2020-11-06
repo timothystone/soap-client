@@ -1,4 +1,7 @@
-<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://wsdl.anothercaffeinatedday.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns2="http://schemas.xmlsoap.org/soap/http" xmlns:ns1="http://www.anothercaffeinatedday.com" name="CustomerOrdersWSImplService" targetNamespace="http://wsdl.anothercaffeinatedday.com/">
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://wsdl.anothercaffeinatedday.com/"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:ns1="http://www.anothercaffeinatedday.com" name="CustomerOrdersWSImplService"
+                  targetNamespace="http://wsdl.anothercaffeinatedday.com/">
   <wsdl:import location="http://localhost:8080/wsdlfirst/customerordersservice?wsdl=CustomerOrdersPortType.wsdl" namespace="http://www.anothercaffeinatedday.com">
     </wsdl:import>
   <wsdl:binding name="CustomerOrdersWSImplServiceSoapBinding" type="ns1:CustomerOrdersPortType">
