@@ -173,6 +173,11 @@ Following Lesson 99's four (4) step pattern, the implementation is part of the c
 
 Implemented private static methods for clarity of the Get and Create Orders exercises.
 
+**Question**
+
+The Spring Initializr provides an annotated `@SpringBootApplication` with a `main()` method. There are likely advantages
+to this class that are not detailed in the Section.
+
 ## Lesson 100 — Flow, and the Service Provide Mechanism
 
 ## Lesson 101 — Section Summary

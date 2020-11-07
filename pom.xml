@@ -10,7 +10,7 @@
     <groupId>com.anothercaffeinatedday</groupId>
     <artifactId>soap-client</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>CustomerOrdersServiceSOAPClient</name>
+    <name>Customer Orders Service SOAP Client</name>
     <description>A CXF JAXWS SOAP Client for CustomerOrders</description>
 
     <properties>
