@@ -10,7 +10,7 @@ Lesson 99. `master` will reflect the full working project.
 
 ### Repository Notes
 
-Bharath uses Eclipse throughout his course. I'm neither a fan or user of Eclipse. This repository and the instructions 
+Bharath uses Eclipse throughout his course. I'm neither a fan nor user of Eclipse. This repository and the instructions 
 that follow will use [JetBrains's IntelliJ IDEA](https://www.jetbrains.com/idea/download/) 2020.2.3 (or a version similar). 
 [NetBeans 12](https://netbeans.apache.org/download/nb120/nb120.html) proved to be similarly capable, but the Spring Boot
 Initializr integration was missing at the time of the project creation. Netbeans 12 Maven integration for Spring Boot 
@@ -122,8 +122,8 @@ Add this file from the CustomerOrders web service in `src/main/resources` per th
 1. Strike the `sourceRoot` element from the `configuration`. The defined value for this element is the default and 
 unnecessary.
 1. The `extraargs` element is a nice to have as it provides a `toString()` method to the generated stubs. Additionally,
-the defined argument, `-xjc-Xts:style:multiline`, dumps the stringified object to the log on multiple lines, providing
-an easier to read output. IMHO. To support this, the `xjcplugins` and `xjc-utils` are added to the dependencies. Also a 
+the defined argument, `-xjc-Xts:style:multiline`, stringifies the object to the log on multiple lines, providing
+an easier to read output. IMHO. To support this, the `xjcplugins` and `xjc-utils` are added to the dependencies. Also, a 
 `cxf.xjc.version` property is added for ease of updates.
 
 **Lesson Notes**
@@ -165,7 +165,7 @@ Use the builtin formatter for Logging output vs. `System.out`.
 
 ## Lesson 99 — Assignment
 
-In this lesson, Bharath wants us implement a create orders request, create an order, and dump the new order to the log.
+In this lesson, Bharath wants us to implement a createOrders request, create an order, and dump the new order to the log.
 
 Following Lesson 99's four (4) step pattern, the implementation is part of the commit history for your review.
 
@@ -176,7 +176,7 @@ Implemented private static methods for clarity of the Get and Create Orders exer
 **Question**
 
 The Spring Initializr provides an annotated `@SpringBootApplication` with a `main()` method. There are likely advantages
-to this class that are not detailed in the Section.
+to this class not detailed in the Section.
 
 ## Lesson 100 — Flow, and the Service Provide Mechanism
 
