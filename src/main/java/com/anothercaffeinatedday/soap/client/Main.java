@@ -25,6 +25,7 @@ public class Main {
 
         getOrders(customerOrdersWSImplPort);
         createOrder(customerOrdersWSImplPort);
+        getOrders(customerOrdersWSImplPort);
 
     }
 
@@ -35,9 +36,8 @@ public class Main {
         product.setDescription("Red Box D&D");
         product.setQuantity(1);
         Order order = new Order();
-        order.setId(3);
         order.getProducts().add(product);
-        request.setCustomerId(2);
+        request.setCustomerId(1);
         request.setOrder(order);
         CreateOrdersResponse response = customerOrdersWSImplPort.createOrders(request);
 
@@ -55,6 +55,12 @@ public class Main {
         List<Order> orders = response.getOrders();
 
         LOGGER.debug("Number of orders for Customer {}: {}", orders.get(0).getId(), orders.size());
-        LOGGER.debug(orders.get(0).toString());
+        if(orders.size() > 1) {
+            for( Order order : orders) {
+                LOGGER.debug(order.toString());
+            }
+        } else {
+            LOGGER.debug(orders.get(0).toString());
+        }
     }
 }
