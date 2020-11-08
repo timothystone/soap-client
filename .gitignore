@@ -26,5 +26,5 @@ build/
 ### VS Code ###
 .vscode/
 
-### Moc OS ###
+### Mac OS ###
 .DS_Store
