@@ -17,7 +17,7 @@ import java.util.List;
 
 public class Main {
     public static final Logger LOGGER = LoggerFactory.getLogger(Main.class);
-    public static final String WSDL_LOCATION = "http://localhost:8081/wsdlfirst/customerordersservice?wsdl";
+    public static final String WSDL_LOCATION = "http://localhost:8080/wsdlfirst/customerordersservice?wsdl";
 
     public static void main(String[] args) throws MalformedURLException {
         CustomerOrdersWSImplService service = new CustomerOrdersWSImplService(new URL(WSDL_LOCATION));
