@@ -112,11 +112,6 @@ Save the WSDL to `src/main/resources/wsdl/customerorders.wsdl`.
 
 As noted, this step is performed in Lesson 95, but repeated here slightly different.
 
-**`server.port`**
-
-In the WSDL First client, the `server.port` SHOULD be changed in the `application.properties` file. This will become 
-necessary when running the SOAP Client later. Pick an available port, e.g., `server.port=8180`. 
-
 ## Lesson 97 — Generate the Stubs
 
 This lesson starts by retrieving the CXF Codegen Plugin configuration from the WSDL First Service created in Section 9.
@@ -150,10 +145,6 @@ Bharath begins with creating an entry point for the webservice client. This is c
 4. Process the response of the request.
 
 **Lesson Notes**
-
-If not already done, the `server.port` MUST be changed in the `application.properties` file. If not performed as noted
-in Lesson 96 in the WSDL First service configuration, it is necessary to run the SOAP Client. Pick an available port, 
-e.g., `server.port=8180`.
 
 The Main class is called `Main`, following a pattern from larger projects I have worked on, and not a longer form as 
 described in the course. 
